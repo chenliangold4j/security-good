@@ -1,0 +1,13 @@
+server:
+  port: 6868
+eureka:
+  client:
+    register-with-eureka: false #是否将自己注册到eureka中
+    fetch-registry: false #是否从eureka中获取信息
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka/
+  server:
+    # 默认是true，调整为false，关闭eureka的自我保护
+    enable-self-preservation: false
+    # 每隔 4 秒清理服务列表 （默认值 60*1000 是1分钟）
+    eviction-interval-timer-in-ms: 4000
