@@ -9,7 +9,6 @@ import org.junit.After;
  *
  * @author <Authors name>
  * @version 1.0
- * @since <pre>7�� 17, 2020</pre>
  */
 public class PaymentServiceTest {
 

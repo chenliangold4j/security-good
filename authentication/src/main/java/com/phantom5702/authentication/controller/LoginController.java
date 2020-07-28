@@ -41,7 +41,8 @@ public class LoginController {
             String target = savedRequest.getRedirectUrl();
             System.out.println("引发跳转的请求是："+target);
             if(target.endsWith(".html")){
-                redirectStrategy.sendRedirect(httpServletRequest,httpServletResponse,"http://www.baidu.com");
+                //这里可以考虑跳转到登录页
+                redirectStrategy.sendRedirect(httpServletRequest,httpServletResponse,"http://localhost:8001/api/sms/test.html");
             }
         }
         return Result.createDefaultErrorMessage("访问的服务需要身份认证，请引导用户到登录页面");

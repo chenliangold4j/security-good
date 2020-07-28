@@ -26,8 +26,8 @@ public class TestController {
     public static void main(String[] args) throws IOException {
         File file = new File("D:/test.txt");
         OutputStream out = new FileOutputStream(file);
-        for(int i =0;i<10000;i++){
-            out.write((i+","+i+","+i+"\n").getBytes());
+        for (int i = 0; i < 10000; i++) {
+            out.write((i + "," + i + "," + i + "\n").getBytes());
         }
         out.flush();
         out.close();

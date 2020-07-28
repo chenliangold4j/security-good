@@ -32,6 +32,10 @@ import java.io.PrintWriter;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    /**
+     * 密码加解密
+     * @return
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -81,12 +85,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     DataSource dataSource;
 
 
-    //安全拦截机制（最重要）
+    /**
+     * 1.因为LoginUrlAuthenticationEntryPoint 中的buildRedirectUrlToLoginPage 会获取自身的地址，端口再加loginPage,所以无法过
+     * 网关跳转到登录页，可以考虑用本地的接口（/authentication/require）设置跳转。
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/authentication/**", "/code/*").permitAll()
+                .antMatchers("/", "/authentication/**", "/code/*","/oauth/*").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()//允许表单登录
