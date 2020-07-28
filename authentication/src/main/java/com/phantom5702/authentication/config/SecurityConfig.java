@@ -105,4 +105,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .userDetailsService(userDetailsService);
         http.addFilterAt(customAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
+
+
 }
