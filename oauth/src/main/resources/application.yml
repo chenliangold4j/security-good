@@ -6,11 +6,9 @@ spring:
     name: oauth
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/use_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
-    #    url: jdbc:mysql://172.17.0.2:3306/gonghui_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
+    url: jdbc:mysql://127.0.0.1:3306/user_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
     username: root
     password: 123456
-    #    password: QWEqaz@123
   main:
     allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
 eureka:
