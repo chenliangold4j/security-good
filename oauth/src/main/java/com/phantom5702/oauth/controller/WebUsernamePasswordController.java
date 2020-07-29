@@ -56,8 +56,6 @@ public class WebUsernamePasswordController {
     }
 
     public UsernamePasswordAuthenticationToken checkClient(String clientId, String clientSecret) {
-//        UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(clientId,
-//                clientSecret);
         ClientDetails clientDetails = this.clientDetailsService.loadClientByClientId(clientId);
         boolean matches = this.passwordEncoder.matches(clientSecret, clientDetails.getClientSecret());
         if (!matches) {
