@@ -11,7 +11,6 @@
         <module>eureka6868</module>
         <module>common</module>
         <module>zuul8001</module>
-        <module>authentication</module>
         <module>sms</module>
         <module>oauth</module>
     </modules>
