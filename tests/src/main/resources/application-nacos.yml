@@ -1,0 +1,15 @@
+server:
+  port: 83
+spring:
+  application:
+    name: test
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource      #当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver        #mysql驱动包
+    url: jdbc:mysql://localhost:3306/user_db?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
