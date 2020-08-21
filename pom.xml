@@ -13,6 +13,8 @@
         <module>sms</module>
         <module>oauth</module>
         <module>gateway8081</module>
+        <module>zuul8082</module>
+        <module>allother</module>
     </modules>
     <packaging>pom</packaging>
 

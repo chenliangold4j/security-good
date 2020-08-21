@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: zuul
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+server:
+  port: 8082
+zuul:
+  #需要忽略的头部信息，不在传播到其他服务
+  sensitive-headers: Access-Control-Allow-Origin
+  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
+  ignoredServices: '*'
+  # 使用 prefix 添加前缀
+  #  prefix: /api
+  routes:
+    # 自定义规则名
+    sms-service-api:
+      # url地址
+      path: /sms/**
+      # 要路由到哪个服务 -- 对应于具体服务的 spring.application.name
+      serviceId: sms
+      strip-prefix: true
+    test-service-api:
+      # url地址
+      path: /test/**
+      # 要路由到哪个服务 -- 对应于具体服务的 spring.application.name
+      serviceId: test
+      strip-prefix: true
+
+
+
