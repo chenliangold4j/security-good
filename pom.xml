@@ -10,7 +10,6 @@
     <modules>
         <module>eureka6868</module>
         <module>common</module>
-        <module>zuul8001</module>
         <module>sms</module>
         <module>oauth</module>
         <module>gateway8081</module>
