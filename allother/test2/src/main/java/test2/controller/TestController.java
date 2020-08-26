@@ -21,7 +21,7 @@ public class TestController {
     }
 
     @GetMapping("/receivce")
-    public String test(HttpServletRequest httpServletRequest){
+    public String test(HttpServletRequest httpServletRequest,Integer size){
         Cookie[] cookies = httpServletRequest.getCookies();
         for(Cookie cookie:cookies){
             System.out.println(cookie.getName()+":"+cookie.getValue());
@@ -32,7 +32,6 @@ public class TestController {
     @PostConstruct
     public void modify() {
         System.out.println("------------TestController");
-
     }
 
 }
