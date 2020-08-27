@@ -14,10 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 public class TestController {
 
     @GetMapping("/receivce")
-    public String test(HttpServletRequest httpServletRequest){
+    public String test(HttpServletRequest httpServletRequest) {
         Cookie[] cookies = httpServletRequest.getCookies();
-        for(Cookie cookie:cookies){
-            System.out.println(cookie.getName()+":"+cookie.getValue());
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                System.out.println(cookie.getName() + ":" + cookie.getValue());
+            }
         }
         return "test1";
     }

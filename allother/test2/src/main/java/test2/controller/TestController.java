@@ -21,10 +21,13 @@ public class TestController {
     }
 
     @GetMapping("/receivce")
-    public String test(HttpServletRequest httpServletRequest,Integer size){
+    public String test(HttpServletRequest httpServletRequest, Integer size) {
+        System.out.println("----------------------------------------------------------");
         Cookie[] cookies = httpServletRequest.getCookies();
-        for(Cookie cookie:cookies){
-            System.out.println(cookie.getName()+":"+cookie.getValue());
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                System.out.println(cookie.getName() + ":" + cookie.getValue());
+            }
         }
         return "test2";
     }

@@ -1,6 +1,7 @@
 package test2.config;
 
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.core.MethodParameter;
 import org.springframework.validation.BindException;
 import org.springframework.validation.ObjectError;
@@ -24,6 +25,6 @@ public class GlobalExceptionHandler {
             String msg =parameter.getParameterName();//获取自错误信息
             return msg+" 参数格式错误";//将具体
         }
-        return e.getMessage();
+        return StringUtils.isEmpty(e.getMessage()) ? "error":e.getMessage();
     }
 }

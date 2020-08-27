@@ -10,10 +10,6 @@ import java.util.Map;
 @Configuration
 public class Config {
 
-    static{
-        System.out.println("初始化");
-    }
-
     @Autowired
     NacosDiscoveryProperties nacosDiscoveryProperties;
 
