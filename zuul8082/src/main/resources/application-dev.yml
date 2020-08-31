@@ -37,3 +37,10 @@ ribbon:
   ReadTimeout: 60000
   ConnectTimeout: 60000
 
+
+test:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.phantom5702.zuul.config.MyRule
+
+# 自定义负载均衡策略
+#springboot-h2.ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RandomRule
