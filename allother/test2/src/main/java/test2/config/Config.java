@@ -17,7 +17,7 @@ public class Config {
     public void modify() {
         System.out.println("modify");
         Map<String, String> metadata = nacosDiscoveryProperties.getMetadata();
-        metadata.put("test","helloWorld");
+        metadata.put("test", "helloWorld");
     }
 
 }
