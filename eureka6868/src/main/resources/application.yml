@@ -1,5 +1,5 @@
 server:
-  port: 6868
+  port: 7878
 eureka:
   client:
     register-with-eureka: false #是否将自己注册到eureka中
